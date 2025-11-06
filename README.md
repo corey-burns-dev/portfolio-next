@@ -1,3 +1,3 @@
-## Portfolio
+# Portfolio
 
-# Moving my gatsby js portfolio over to ts and nextjs
+My old portfolio, cant decide on a finaly design...

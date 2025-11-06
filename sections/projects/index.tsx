@@ -55,8 +55,8 @@ function SocialVideos() {
       loop
       muted
     >
-      <source src="/videos/socialwebm.webm" type="video/webm" />
-      <source src="/videos/socialmp4.mp4" type="video/mp4" />
+      <source src="/videos/quikeatswebm.webm" type="video/webm" />
+      <source src="/videos/quikeatsmp4.mp4" type="video/mp4" />
     </video>
   );
 }

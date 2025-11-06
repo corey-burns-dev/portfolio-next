@@ -1,4 +1,4 @@
-import { Box, Icon, VStack } from "@chakra-ui/react";
+import { Box, VStack } from "@chakra-ui/react";
 import CustomEmailIcon from "@common/icons/email-icon";
 import AnimatedTelegramIcon from "@common/icons/telegram-icon";
 import { socials } from "@configs/site-config/socials";
@@ -29,17 +29,17 @@ const HeroSocialIcon = () => (
         >
           {item.iconName === "email" && (
             <MotionHoverBox whileHover={{ scale: 1.1, rotate: 12 }}>
-              <Icon opacity={0.9} w={5} h={5} as={CustomEmailIcon} />
+              <CustomEmailIcon opacity={0.9} boxSize={5} />
             </MotionHoverBox>
           )}
           {item.iconName === "github" && (
             <MotionHoverBox whileHover={{ scale: 1.1, rotate: 12 }}>
-              <Icon w={5} h={5} opacity={0.9} as={GitIcon} />
+              <GitIcon opacity={0.9} boxSize={5} />
             </MotionHoverBox>
           )}
           {item.iconName === "telegram" && (
             <MotionHoverBox whileHover={{ scale: 1.1, rotate: 12 }}>
-              <Icon w={5} h={5} opacity={0.9} as={AnimatedTelegramIcon} />
+              <AnimatedTelegramIcon opacity={0.9} boxSize={5} />
             </MotionHoverBox>
           )}
         </VStack>

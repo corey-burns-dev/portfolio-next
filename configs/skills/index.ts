@@ -55,7 +55,6 @@ export const mySkills = [
       { title: "TypeGraphQL" },
       { title: "MongoDB" },
       { title: "MikroORM" },
-      { title: "Postgres" },
       { title: "Auth/JWT" },
       { title: "Firebase" },
     ],

@@ -37,7 +37,7 @@ export default function HeroContainer() {
           }}
         />
 
-        <Flex alignItems="center" justifyContent="center" flexDir="column">
+        <Flex alignItems="center" justifyContent="center" flexDir="column" h="full" w="full">
           <Box>
             <Heading
               className={monte.className}
@@ -69,23 +69,27 @@ export default function HeroContainer() {
               full-stack developer
             </Heading>
           </Box>
-          <VStack pos="absolute" bottom="50" alignItems="center">
-            <ChakraLink
-              as={VStack}
-              to="skills"
-              _hover={{ cursor: "pointer", color: "p2" }}
-              smooth
-              duration={500}
-            >
+          <ChakraLink
+            as={VStack}
+            pos="absolute"
+            bottom={12}
+            left="50%"
+            transform="translateX(-50%)"
+            alignItems="center"
+            to="skills"
+            _hover={{ cursor: "pointer", color: "p2" }}
+            smooth
+            duration={500}
+          >
+            <VStack gap={1} align="center">
               <AnimatedScrollText
                 fontSize={{ base: "10.5px", sm: "12.5px" }}
                 initial={{ rotate: 90 }}
                 animate={{
-                  y: [0, -1, -4, -6, -8, -5, -3, -2, 0],
+                  y: [0, -4, -8, -6, -2, 0],
                 }}
                 transition={{
-                  duration: 2,
-                  times: [0, 0.5, 1],
+                  duration: 1.6,
                   ease: "linear",
                   repeat: Infinity,
                   repeatType: "reverse",
@@ -94,8 +98,8 @@ export default function HeroContainer() {
                 Scroll
               </AnimatedScrollText>
               <AnimatedScrollDownArrow />
-            </ChakraLink>
-          </VStack>
+            </VStack>
+          </ChakraLink>
         </Flex>
       </Center>
     </SectionContainer>

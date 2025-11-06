@@ -1,4 +1,4 @@
-import { Box, Heading, HStack, ListItem } from "@chakra-ui/react";
+import { Box, Heading, HStack } from "@chakra-ui/react";
 import { sections } from "@configs/site-config/sections";
 import { ChakraScrollLink } from "@lib/chakraScrollLink";
 import { dancing, nunito } from "fonts";
@@ -43,12 +43,12 @@ export default function Navbar() {
         >
           Corey Burns
         </ChakraScrollLink>
-        <HStack w="lg" justify="space-evenly">
+        <HStack as="ul" w="lg" justify="space-evenly">
           {sections.map((sec: { id: string }) => (
             <Box
               className={nunito.className}
               key={`nav-item-${sec.id}`}
-              as={ListItem}
+              as="li"
               color="#444444"
               fontFamily="Nunito"
               fontWeight={{ base: 800, md: 700 }}
