@@ -1,4 +1,4 @@
-import { Box, Center, Text } from "@chakra-ui/react"
+import { Box, Center, Text } from "@chakra-ui/react";
 
 export default function Footer() {
   return (
@@ -17,5 +17,5 @@ export default function Footer() {
         </Text>
       </Center>
     </Box>
-  )
+  );
 }

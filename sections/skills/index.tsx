@@ -1,30 +1,18 @@
-import {
-  Box,
-  Center,
-  chakra,
-  Fade,
-  HStack,
-  List,
-  ListItem,
-  ScaleFade,
-  SimpleGrid,
-  Tag,
-  TagLabel,
-  VStack
-} from "@chakra-ui/react"
-import { SectionContainer, SectionHeading } from "@common/index"
-import { developerInfo, mySkills } from "@configs/skills"
-import { nunito } from "fonts"
-import Image from "next/image"
-import { useInView } from "react-intersection-observer"
-import skillsBgImage from "../../public/bg/laptop.webp"
+import { Box, Center, chakra, HStack, List, SimpleGrid, Tag, VStack } from "@chakra-ui/react";
+import { SectionContainer, SectionHeading } from "@common/index";
+import { developerInfo, mySkills } from "@configs/skills";
+import { nunito } from "fonts";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { useInView } from "react-intersection-observer";
+import skillsBgImage from "../../public/bg/laptop.webp";
 
 interface Skill {
-  title: string
-  iconName: string
+  title: string;
+  iconName: string;
   skills: {
-    title: string
-  }[]
+    title: string;
+  }[];
 }
 
 function MySkills() {
@@ -32,20 +20,23 @@ function MySkills() {
     threshold: 0.9,
     triggerOnce: true,
     trackVisibility: true,
-    delay: 350
-  })
+    delay: 350,
+  });
+  const MotionDiv = motion.div;
   return (
     <div ref={ref}>
       {inView ? (
         <Box>
-          {mySkills.map((item: Skill) => (
-            <ScaleFade
-              initialScale={0.4}
-              in={inView}
+          {mySkills.map((item: Skill, index) => (
+            <MotionDiv
               key={`my-skills-${item.title}`}
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              style={{ marginBottom: "1.5rem" }}
             >
-              <List>
-                <ListItem mb="2.5">
+              <List.Root listStyleType="none" gap={4}>
+                <List.Item>
                   <HStack fontWeight="700" color="newBlack" px="1" maxW="150px">
                     <chakra.h3
                       className={nunito.className}
@@ -64,27 +55,27 @@ function MySkills() {
                       {item.title}
                     </chakra.h3>
                   </HStack>
-                </ListItem>
-                <ListItem mb={4}>
-                  {item.skills.map((skill: any) => (
-                    <Tag
+                </List.Item>
+                <List.Item display="flex" flexWrap="wrap" gap={2}>
+                  {item.skills.map((skill) => (
+                    <Tag.Root
                       m={1}
                       size="sm"
-                      colorScheme="blackAlpha"
+                      colorPalette="blackAlpha"
                       variant="subtle"
                       key={`MySkills-badge-${skill.title}`}
                     >
-                      <TagLabel color="blackAlpha.700">{skill.title}</TagLabel>
-                    </Tag>
+                      <Tag.Label color="blackAlpha.700">{skill.title}</Tag.Label>
+                    </Tag.Root>
                   ))}
-                </ListItem>
-              </List>
-            </ScaleFade>
+                </List.Item>
+              </List.Root>
+            </MotionDiv>
           ))}
         </Box>
       ) : null}
     </div>
-  )
+  );
 }
 
 function DeveloperInfo() {
@@ -92,15 +83,20 @@ function DeveloperInfo() {
     threshold: 0.9,
     triggerOnce: true,
     trackVisibility: true,
-    delay: 350
-  })
+    delay: 350,
+  });
+  const MotionDiv = motion.div;
   return (
     <div ref={ref}>
       {inView ? (
-        <Fade in={inView}>
-          <List p="4">
-            {developerInfo.excerpt.map((p: any) => (
-              <ListItem
+        <MotionDiv
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35 }}
+        >
+          <List.Root p="4" gap={3} listStyleType="none">
+            {developerInfo.excerpt.map((p) => (
+              <List.Item
                 fontWeight="400"
                 color="#606060"
                 opacity="1"
@@ -109,13 +105,13 @@ function DeveloperInfo() {
                 key={`devInfo-${p.text}`}
               >
                 {p.text}
-              </ListItem>
+              </List.Item>
             ))}
-          </List>
-        </Fade>
+          </List.Root>
+        </MotionDiv>
       ) : null}
     </div>
-  )
+  );
 }
 
 export default function SkillsContainer() {
@@ -135,19 +131,15 @@ export default function SkillsContainer() {
             sizes="100vw"
             style={{
               opacity: 0.2,
-              objectFit: "cover"
+              objectFit: "cover",
             }}
           />
         </Box>
-        <SimpleGrid
-          p={{ base: "2em", md: "3em" }}
-          columns={{ base: 1, lg: 2 }}
-          spacing={4}
-        >
+        <SimpleGrid p={{ base: "2em", md: "3em" }} columns={{ base: 1, lg: 2 }} gap={4}>
           <DeveloperInfo />
           <MySkills />
         </SimpleGrid>
       </VStack>
     </SectionContainer>
-  )
+  );
 }

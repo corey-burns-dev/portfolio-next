@@ -1,4 +1,4 @@
-import { Icon, IconProps } from "@chakra-ui/react"
+import { Icon, IconProps } from "@chakra-ui/react";
 
 const CustomGraphQLIcon = (props: IconProps) => (
   <Icon viewBox="0 0 393 512" {...props}>
@@ -9,6 +9,6 @@ const CustomGraphQLIcon = (props: IconProps) => (
       clipRule="evenodd"
     />
   </Icon>
-)
+);
 
-export default CustomGraphQLIcon
+export default CustomGraphQLIcon;

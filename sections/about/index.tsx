@@ -1,16 +1,9 @@
-import { EmailIcon } from "@chakra-ui/icons"
-import {
-  Box,
-  List,
-  ListIcon,
-  ListItem,
-  SimpleGrid,
-  VStack
-} from "@chakra-ui/react"
-import { SectionContainer, SectionHeading } from "@common/index"
-import { aboutMe, randomFacts } from "@configs/about"
-import Image from "next/image"
-import aboutBGImage from "../../public/bg/leaves.webp"
+import { EmailIcon } from "@chakra-ui/icons";
+import { Box, List, SimpleGrid, VStack } from "@chakra-ui/react";
+import { SectionContainer, SectionHeading } from "@common/index";
+import { aboutMe, randomFacts } from "@configs/about";
+import Image from "next/image";
+import aboutBGImage from "../../public/bg/leaves.webp";
 
 export default function AboutContainer() {
   return (
@@ -26,54 +19,54 @@ export default function AboutContainer() {
             sizes="100vw"
             style={{
               opacity: 0.2,
-              objectFit: "cover"
+              objectFit: "cover",
             }}
           />
         </Box>
 
-        <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={7} p={["1em", "2em"]}>
-          <List>
-            <ListItem textStyle="list-heading">
-              <ListIcon as={EmailIcon} boxSize={5} color="red.500" />
+        <SimpleGrid columns={{ base: 1, lg: 2 }} gap={7} p={["1em", "2em"]}>
+          <List.Root gap={3} listStyleType="none">
+            <List.Item textStyle="list-heading" display="flex" alignItems="center" gap={2}>
+              <List.Indicator color="red.500">
+                <EmailIcon boxSize={5} />
+              </List.Indicator>
               {randomFacts.title}
-            </ListItem>
-            <>
-              {randomFacts.facts.map((fact: { title: string }) => (
-                <ListItem
-                  fontWeight="400"
-                  color="#606060"
-                  opacity="1"
-                  transform="matrix(1,0,0,1,0,0)"
-                  fontSize={{ base: "xs", md: "sm" }}
-                  key={`random-fact-${fact.title}`}
-                >
-                  {fact.title}
-                </ListItem>
-              ))}
-            </>
-          </List>
-          <List>
-            <ListItem textStyle="list-heading">
-              <ListIcon as={EmailIcon} boxSize={5} color="red.500" />
+            </List.Item>
+            {randomFacts.facts.map((fact) => (
+              <List.Item
+                fontWeight="400"
+                color="#606060"
+                opacity="1"
+                transform="matrix(1,0,0,1,0,0)"
+                fontSize={{ base: "xs", md: "sm" }}
+                key={`random-fact-${fact.title}`}
+              >
+                {fact.title}
+              </List.Item>
+            ))}
+          </List.Root>
+          <List.Root gap={3} listStyleType="none">
+            <List.Item textStyle="list-heading" display="flex" alignItems="center" gap={2}>
+              <List.Indicator color="red.500">
+                <EmailIcon boxSize={5} />
+              </List.Indicator>
               {aboutMe.title}
-            </ListItem>
-            <>
-              {aboutMe.excerpt.map((paragraph: { text: string }) => (
-                <ListItem
-                  fontWeight="400"
-                  color="#606060"
-                  opacity="1"
-                  transform="matrix(1,0,0,1,0,0)"
-                  fontSize={{ base: "xs", md: "sm" }}
-                  key={`p-${paragraph.text}`}
-                >
-                  {paragraph.text}
-                </ListItem>
-              ))}
-            </>
-          </List>
+            </List.Item>
+            {aboutMe.excerpt.map((paragraph) => (
+              <List.Item
+                fontWeight="400"
+                color="#606060"
+                opacity="1"
+                transform="matrix(1,0,0,1,0,0)"
+                fontSize={{ base: "xs", md: "sm" }}
+                key={`p-${paragraph.text}`}
+              >
+                {paragraph.text}
+              </List.Item>
+            ))}
+          </List.Root>
         </SimpleGrid>
       </VStack>
     </SectionContainer>
-  )
+  );
 }

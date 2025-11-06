@@ -3,7 +3,7 @@ export const socials = [
   {
     url: "https://www.github.com/burnsco",
     title: "Github",
-    iconName: "github"
+    iconName: "github",
   },
-  { url: "https://t.me/coreyburns", title: "Telegram", iconName: "telegram" }
-]
+  { url: "https://t.me/coreyburns", title: "Telegram", iconName: "telegram" },
+];

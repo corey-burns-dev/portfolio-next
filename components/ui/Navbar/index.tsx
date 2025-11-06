@@ -1,10 +1,10 @@
-import { Box, Heading, HStack, List, ListItem } from "@chakra-ui/react"
-import { sections } from "@configs/site-config/sections"
-import { ChakraScrollLink } from "@lib/chakraScrollLink"
-import { dancing, nunito } from "fonts"
+import { Box, Heading, HStack, ListItem } from "@chakra-ui/react";
+import { sections } from "@configs/site-config/sections";
+import { ChakraScrollLink } from "@lib/chakraScrollLink";
+import { dancing, nunito } from "fonts";
 
 function capitalizedTitle(title: string) {
-  return title.charAt(0).toUpperCase() + title.slice(1)
+  return title.charAt(0).toUpperCase() + title.slice(1);
 }
 
 export default function Navbar() {
@@ -32,9 +32,9 @@ export default function Navbar() {
           className={dancing.className}
           display={{ base: "none", sm: "block" }}
           _hover={{ cursor: "pointer" }}
-          activeclass="active"
+          activeClass="active"
           duration={500}
-          to={`home`}
+          to="home"
           spy
           smooth={true}
           as={Heading}
@@ -43,7 +43,7 @@ export default function Navbar() {
         >
           Corey Burns
         </ChakraScrollLink>
-        <HStack w="lg" justify="space-evenly" as={List}>
+        <HStack w="lg" justify="space-evenly">
           {sections.map((sec: { id: string }) => (
             <Box
               className={nunito.className}
@@ -58,7 +58,7 @@ export default function Navbar() {
             >
               <ChakraScrollLink
                 activeStyle={{
-                  color: "#d77f74"
+                  color: "#d77f74",
                 }}
                 _hover={{ cursor: "pointer", color: "#d77f74" }}
                 activeClass="active"
@@ -75,5 +75,5 @@ export default function Navbar() {
         </HStack>
       </HStack>
     </HStack>
-  )
+  );
 }

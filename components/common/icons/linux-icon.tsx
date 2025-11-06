@@ -1,4 +1,4 @@
-import { Icon, IconProps } from "@chakra-ui/react"
+import { Icon, IconProps } from "@chakra-ui/react";
 
 const CustomLinuxIcon = (props: IconProps) => (
   <Icon fill="none" viewBox="0 0 32 32" {...props}>
@@ -9,6 +9,6 @@ const CustomLinuxIcon = (props: IconProps) => (
       clipRule="evenodd"
     />
   </Icon>
-)
+);
 
-export default CustomLinuxIcon
+export default CustomLinuxIcon;

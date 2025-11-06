@@ -1,20 +1,16 @@
-import { Flex, HStack, Icon } from "@chakra-ui/react"
-import CustomEmailIcon from "@common/icons/email-icon"
-import AnimatedTelegramIcon from "@common/icons/telegram-icon"
-import { socials } from "@configs/site-config/socials"
-import { motion } from "framer-motion"
-import GitIcon from "./git-icon"
+import { Flex, HStack, Icon } from "@chakra-ui/react";
+import CustomEmailIcon from "@common/icons/email-icon";
+import AnimatedTelegramIcon from "@common/icons/telegram-icon";
+import { socials } from "@configs/site-config/socials";
+import { motion } from "framer-motion";
+import GitIcon from "./git-icon";
 
-const MotionHoverBox = motion(Flex)
+const MotionHoverBox = motion(Flex);
 
 const HeroSocialIconHor = () => (
   <>
-    {socials.map(item => (
-      <HStack
-        key={`social-bottom-${item.title}`}
-        w="full"
-        display={{ base: "block", sm: "none" }}
-      >
+    {socials.map((item) => (
+      <HStack key={`social-bottom-${item.title}`} w="full" display={{ base: "block", sm: "none" }}>
         {item.iconName === "email" && (
           <MotionHoverBox whileHover={{ scale: 1.1, rotate: 12 }}>
             <Icon opacity={0.9} w={5} h={5} as={CustomEmailIcon} />
@@ -33,6 +29,6 @@ const HeroSocialIconHor = () => (
       </HStack>
     ))}
   </>
-)
+);
 
-export default HeroSocialIconHor
+export default HeroSocialIconHor;

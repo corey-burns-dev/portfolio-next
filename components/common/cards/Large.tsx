@@ -1,5 +1,5 @@
-import { Box, BoxProps } from "@chakra-ui/react"
+import { Box, BoxProps } from "@chakra-ui/react";
 
-const LargeCard = (props: BoxProps) => <Box overflow="hidden" {...props} />
+const LargeCard = (props: BoxProps) => <Box overflow="hidden" {...props} />;
 
-export default LargeCard
+export default LargeCard;

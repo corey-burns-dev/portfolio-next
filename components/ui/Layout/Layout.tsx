@@ -1,5 +1,4 @@
-import { Flex } from "@chakra-ui/react"
-import PropTypes from "prop-types"
+import { Flex } from "@chakra-ui/react";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <Flex
@@ -11,10 +10,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   >
     {children}
   </Flex>
-)
+);
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired
-}
-
-export default Layout
+export default Layout;

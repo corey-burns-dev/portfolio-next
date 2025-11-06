@@ -1,9 +1,14 @@
-import { Box } from "@chakra-ui/react"
+import { Box, type BoxProps } from "@chakra-ui/react";
+import type { AnchorHTMLAttributes } from "react";
 
-const CustomButton2 = (props: any) => (
+type CustomButton2Props = BoxProps &
+  Pick<AnchorHTMLAttributes<HTMLAnchorElement>, "href" | "target" | "rel"> & {
+    title: string;
+  };
+
+const CustomButton2 = ({ title, as: asProp = "button", ...rest }: CustomButton2Props) => (
   <Box
-    {...props}
-    as="button"
+    as={asProp}
     height="28px"
     lineHeight="1.2"
     animation="1.5s ease infinite alternate running shimmer"
@@ -22,15 +27,15 @@ const CustomButton2 = (props: any) => (
     _active={{
       bg: "#dddfe2",
       transform: "scale(0.98)",
-      borderColor: "#bec3c9"
+      borderColor: "#bec3c9",
     }}
     _focus={{
-      boxShadow:
-        "0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)"
+      boxShadow: "0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)",
     }}
+    {...rest}
   >
-    {props.title}
+    {title}
   </Box>
-)
+);
 
-export default CustomButton2
+export default CustomButton2;

@@ -1,14 +1,14 @@
-import { Box, Center, chakra, Flex, Heading, VStack } from "@chakra-ui/react"
-import AnimatedScrollDownArrow from "@common/icons/scroll-down-arrow"
-import { SectionContainer } from "@common/index"
-import { monte } from "fonts"
-import { motion } from "framer-motion"
-import Image from "next/image"
-import { Link } from "react-scroll"
-import heroBgImage from "../../public/bg/hero.webp"
+import { Box, Center, chakra, Flex, Heading, VStack } from "@chakra-ui/react";
+import AnimatedScrollDownArrow from "@common/icons/scroll-down-arrow";
+import { SectionContainer } from "@common/index";
+import { monte } from "fonts";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { Link } from "react-scroll";
+import heroBgImage from "../../public/bg/hero.webp";
 
-const ChakraLink = chakra(Link)
-const AnimatedScrollText = motion(Box)
+const ChakraLink = chakra(Link);
+const AnimatedScrollText = motion(Box);
 
 export default function HeroContainer() {
   return (
@@ -33,7 +33,7 @@ export default function HeroContainer() {
           sizes="100vw"
           style={{
             opacity: 0.2,
-            objectFit: "cover"
+            objectFit: "cover",
           }}
         />
 
@@ -81,14 +81,14 @@ export default function HeroContainer() {
                 fontSize={{ base: "10.5px", sm: "12.5px" }}
                 initial={{ rotate: 90 }}
                 animate={{
-                  y: [0, -1, -4, -6, -8, -5, -3, -2, 0]
+                  y: [0, -1, -4, -6, -8, -5, -3, -2, 0],
                 }}
                 transition={{
                   duration: 2,
                   times: [0, 0.5, 1],
                   ease: "linear",
                   repeat: Infinity,
-                  repeatType: "reverse"
+                  repeatType: "reverse",
                 }}
               >
                 Scroll
@@ -99,5 +99,5 @@ export default function HeroContainer() {
         </Flex>
       </Center>
     </SectionContainer>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react"
+import { Box } from "@chakra-ui/react";
 
 const LeftSideBar = () => (
   <Box
@@ -11,6 +11,6 @@ const LeftSideBar = () => (
     left="0"
     bottom="0"
   ></Box>
-)
+);
 
-export default LeftSideBar
+export default LeftSideBar;

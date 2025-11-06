@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
-import { Box } from "@chakra-ui/react"
-import HeroSection from "@sections/hero"
-import Navbar from "@ui/Navbar"
-import BottomSideBar from "@ui/Side/Bottom"
-import LeftSideBar from "@ui/Side/Left"
-import RightSideBar from "@ui/Side/Right"
-import dynamic from "next/dynamic"
+import { Box } from "@chakra-ui/react";
+import HeroSection from "@sections/hero";
+import Navbar from "@ui/Navbar";
+import BottomSideBar from "@ui/Side/Bottom";
+import LeftSideBar from "@ui/Side/Left";
+import RightSideBar from "@ui/Side/Right";
+import dynamic from "next/dynamic";
 
-const SkillsSection = dynamic(() => import("@sections/skills"))
-const ProjectsSection = dynamic(() => import("@sections/projects"))
-const MiniAppsSection = dynamic(() => import("@sections/miniapps"))
-const AboutSection = dynamic(() => import("@sections/about"))
-const Footer = dynamic(() => import("@ui/Footer/Footer"))
+const SkillsSection = dynamic(() => import("@sections/skills"));
+const ProjectsSection = dynamic(() => import("@sections/projects"));
+const MiniAppsSection = dynamic(() => import("@sections/miniapps"));
+const AboutSection = dynamic(() => import("@sections/about"));
+const Footer = dynamic(() => import("@ui/Footer/Footer"));
 
 export default function Page() {
   return (
@@ -37,5 +37,5 @@ export default function Page() {
         <Footer />
       </footer>
     </>
-  )
+  );
 }

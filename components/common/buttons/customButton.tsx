@@ -1,13 +1,22 @@
-import { chakra, HStack } from "@chakra-ui/react"
-import CustomGithubIconColor from "@common/icons/github-icon-color"
-import WebIcon from "@common/icons/web-icon"
+import { chakra, HStack, type StackProps } from "@chakra-ui/react";
+import CustomGithubIconColor from "@common/icons/github-icon-color";
+import WebIcon from "@common/icons/web-icon";
+import type { AnchorHTMLAttributes } from "react";
 
-const CustomButton = (props: any) => (
+type CustomButtonProps = StackProps &
+  Pick<AnchorHTMLAttributes<HTMLAnchorElement>, "href" | "target" | "rel"> & {
+    title: string;
+    demo?: boolean;
+    source?: boolean;
+  };
+
+const CustomButton = ({ title, demo, source, as: asProp = "a", ...rest }: CustomButtonProps) => (
   <HStack
-    backgroundColor={props.demo ? "#3DD1E7" : "#E5E7EB"}
-    border={props.demo ? "0 solid #E5E7EB" : "0 solid #3DD1E7"}
+    as={asProp}
+    backgroundColor={demo ? "#3DD1E7" : "#E5E7EB"}
+    border={demo ? "0 solid #E5E7EB" : "0 solid #3DD1E7"}
     boxSizing="border-box"
-    color={props.source ? "#000000" : "#E5E7EB"}
+    color={source ? "#000000" : "#E5E7EB"}
     fontSize={["1rem", "1.45rem"]}
     fontWeight="700"
     justifyContent="center"
@@ -25,7 +34,7 @@ const CustomButton = (props: any) => (
     WebkitUserSelect="none"
     touchAction="manipulation"
     _focus={{
-      outline: 0
+      outline: 0,
     }}
     _after={{
       content: '""',
@@ -34,19 +43,18 @@ const CustomButton = (props: any) => (
       bottom: "2px",
       left: "2px",
       width: "calc(100% - 1px)",
-      height: "calc(100% - 1px)"
+      height: "calc(100% - 1px)",
     }}
     _hover={{
       _after: {
         bottom: "2px",
-        left: "2px"
-      }
+        left: "2px",
+      },
     }}
-    {...props}
+    {...rest}
   >
-    <chakra.span mr="1">{props.title}</chakra.span>{" "}
-    {props.source ? <CustomGithubIconColor /> : <WebIcon />}
+    <chakra.span mr="1">{title}</chakra.span> {source ? <CustomGithubIconColor /> : <WebIcon />}
   </HStack>
-)
+);
 
-export default CustomButton
+export default CustomButton;

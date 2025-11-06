@@ -1,0 +1,33 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.3.4/schema.json",
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "style": {
+        "useImportType": "off"
+      }
+    }
+  },
+  "formatter": {
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100
+  },
+  "files": {
+    "includes": [
+      "app/**/*",
+      "components/**/*",
+      "configs/**/*",
+      "sections/**/*",
+      "lib/**/*",
+      "theme/**/*",
+      "fonts/**/*",
+      "*.ts",
+      "*.tsx",
+      "*.js",
+      "*.cjs",
+      "*.mjs",
+      "*.json"
+    ]
+  }
+}

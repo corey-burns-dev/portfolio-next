@@ -1,11 +1,8 @@
-import { BoxProps, Grid } from "@chakra-ui/react"
-import { motion } from "framer-motion"
+import { Grid, GridProps } from "@chakra-ui/react";
 
-const AnimatedSmallCard = motion(Grid)
-
-const SmallCard = (props: BoxProps) => (
-  <AnimatedSmallCard
-    grid
+const SmallCard = (props: GridProps) => (
+  <Grid
+    display="grid"
     h="full"
     bg="white"
     borderWidth="1px"
@@ -15,6 +12,6 @@ const SmallCard = (props: BoxProps) => (
     shadow="lg"
     {...props}
   />
-)
+);
 
-export default SmallCard
+export default SmallCard;

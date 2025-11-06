@@ -1,8 +1,8 @@
-import { Box } from "@chakra-ui/react"
-import { Container } from "@common/index"
+import { Box } from "@chakra-ui/react";
+import { Container } from "@common/index";
 
 const PageContainer: React.FC<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }> = ({ children }) => (
   <Container className="main-content">
     <Box display={{ base: "block", md: "flex" }}>
@@ -13,6 +13,6 @@ const PageContainer: React.FC<{
       </div>
     </Box>
   </Container>
-)
+);
 
-export default PageContainer
+export default PageContainer;

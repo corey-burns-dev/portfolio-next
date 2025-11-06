@@ -1,39 +1,31 @@
-import { Box, Icon, Tooltip, VStack } from "@chakra-ui/react"
-import CustomEmailIcon from "@common/icons/email-icon"
-import AnimatedTelegramIcon from "@common/icons/telegram-icon"
-import { socials } from "@configs/site-config/socials"
-import { ChakraLink } from "@lib/chakraLink"
-import { motion } from "framer-motion"
-import GitIcon from "./git-icon"
+import { Box, Icon, VStack } from "@chakra-ui/react";
+import CustomEmailIcon from "@common/icons/email-icon";
+import AnimatedTelegramIcon from "@common/icons/telegram-icon";
+import { socials } from "@configs/site-config/socials";
+import { ChakraLink } from "@lib/chakraLink";
+import { motion } from "framer-motion";
+import GitIcon from "./git-icon";
 
-const MotionHoverBox = motion(Box)
+const MotionHoverBox = motion(Box);
 
 const HeroSocialIcon = () => (
   <VStack pos="relative" h="100%" w="40px" justify="center" align="center">
-    {socials.map(item => (
-      <Tooltip
-        hasArrow
-        bg="gray.200"
-        placement="auto"
+    {socials.map((item) => (
+      <ChakraLink
+        href={item.url}
+        target="_blank"
+        rel="noreferrer noopener"
         key={`Social-${item.title}`}
-        color="black"
-        label={item.title}
-        aria-label={item.title}
-        shouldWrapChildren
+        title={item.title}
       >
         <VStack
-          as={ChakraLink}
           height="2em"
           width="2em"
           display="flex"
           alignItems="center"
           justifyContent="center"
           color="#343436"
-          isExternal
           aria-label={item.title}
-          href={item.url}
-          target="_blank"
-          rel="noreferrer noopener"
         >
           {item.iconName === "email" && (
             <MotionHoverBox whileHover={{ scale: 1.1, rotate: 12 }}>
@@ -51,9 +43,9 @@ const HeroSocialIcon = () => (
             </MotionHoverBox>
           )}
         </VStack>
-      </Tooltip>
+      </ChakraLink>
     ))}
   </VStack>
-)
+);
 
-export default HeroSocialIcon
+export default HeroSocialIcon;

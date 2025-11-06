@@ -1,11 +1,11 @@
-import { chakra } from "@chakra-ui/react"
+import { chakra } from "@chakra-ui/react";
 
 const SectionContainer: React.FC<{
-  id: string
-  children: React.ReactNode
+  id: string;
+  children: React.ReactNode;
 }> = ({ id, children, ...props }) => (
   <chakra.section
-    px={{ base: "0em", xs: "2.5em", md: "3em" }}
+    px={{ base: "0em", sm: "2.5em", md: "3em" }}
     minH="95vh"
     aria-label={`${id} Section`}
     id={id}
@@ -13,6 +13,6 @@ const SectionContainer: React.FC<{
   >
     {children}
   </chakra.section>
-)
+);
 
-export default SectionContainer
+export default SectionContainer;

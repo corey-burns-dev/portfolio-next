@@ -1,5 +1,5 @@
-import { Box } from "@chakra-ui/react"
-import HeroSocialIconHor from "@common/icons/hero-social-icons-hor"
+import { Box } from "@chakra-ui/react";
+import HeroSocialIconHor from "@common/icons/hero-social-icons-hor";
 
 const BottomSideBar = () => (
   <Box
@@ -16,6 +16,6 @@ const BottomSideBar = () => (
   >
     <HeroSocialIconHor />
   </Box>
-)
+);
 
-export default BottomSideBar
+export default BottomSideBar;
