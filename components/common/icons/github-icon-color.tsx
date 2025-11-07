@@ -1,8 +1,8 @@
-import { Icon, IconProps } from "@chakra-ui/icons";
+import { chakra, HTMLChakraProps } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
-const CustomGithubIconColor = (props: IconProps) => (
-  <Icon viewBox="0 0 48 48" {...props}>
+const CustomGithubIconColor = (props: HTMLChakraProps<"svg">) => (
+  <chakra.svg viewBox="0 0 48 48" focusable="false" aria-hidden="true" {...props}>
     <motion.path fill="#fff" d="M41,24c0,9.4-7.6,17-17,17S7,33.4,7,24S14.6,7,24,7S41,14.6,41,24z" />
     <motion.path
       fill="#455a64"
@@ -20,7 +20,7 @@ const CustomGithubIconColor = (props: IconProps) => (
       fill="#00bcd4"
       d="M24,4C13,4,4,13,4,24s9,20,20,20s20-9,20-20S35,4,24,4z M24,40c-8.8,0-16-7.2-16-16S15.2,8,24,8 s16,7.2,16,16S32.8,40,24,40z"
     />
-  </Icon>
+  </chakra.svg>
 );
 
 export default CustomGithubIconColor;

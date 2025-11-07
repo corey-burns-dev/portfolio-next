@@ -33,8 +33,7 @@
     "build": "next build",
     "build-export": "cross-env NEXT_OUTPUT_MODE=export next build",
     "start": "next start",
-    "visual-analyze": "ANALYZE=true next build",
-    "analyze": "BUNDLE_ANALYZE=both yarn build",
+    "analyze": "ANALYZE=true next build --webpack",
     "find:unused": "next-unused",
     "type-check": "tsc --pretty --noEmit",
     "lint": "biome lint .",
@@ -48,7 +47,6 @@
     ]
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.2.4",
     "@chakra-ui/next-js": "^2.4.2",
     "@chakra-ui/react": "^3.29.0",
     "@chakra-ui/theme-tools": "2.2.6",

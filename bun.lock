@@ -4,7 +4,6 @@
     "": {
       "name": "next-portfolio",
       "dependencies": {
-        "@chakra-ui/icons": "^2.2.4",
         "@chakra-ui/next-js": "^2.4.2",
         "@chakra-ui/react": "^3.29.0",
         "@chakra-ui/theme-tools": "2.2.6",
@@ -77,8 +76,6 @@
     "@biomejs/cli-win32-x64": ["@biomejs/cli-win32-x64@2.3.4", "", { "os": "win32", "cpu": "x64" }, "sha512-FGCijXecmC4IedQ0esdYNlMpx0Jxgf4zceCaMu6fkjWyjgn50ZQtMiqZZQ0Q/77yqPxvtkgZAvt5uGw0gAAjig=="],
 
     "@chakra-ui/anatomy": ["@chakra-ui/anatomy@2.3.4", "", {}, "sha512-fFIYN7L276gw0Q7/ikMMlZxP7mvnjRaWJ7f3Jsf9VtDOi6eAYIBRrhQe6+SZ0PGmoOkRaBc7gSE5oeIbgFFyrw=="],
-
-    "@chakra-ui/icons": ["@chakra-ui/icons@2.2.4", "", { "peerDependencies": { "@chakra-ui/react": ">=2.0.0", "react": ">=18" } }, "sha512-l5QdBgwrAg3Sc2BRqtNkJpfuLw/pWRDwwT58J6c4PqQT6wzXxyNa8Q0PForu1ltB5qEiFb1kxr/F/HO1EwNa6g=="],
 
     "@chakra-ui/next-js": ["@chakra-ui/next-js@2.4.2", "", { "dependencies": { "@emotion/cache": "^11.11.0" }, "peerDependencies": { "@chakra-ui/react": ">=2.4.0", "@emotion/react": ">=11", "next": ">=13", "react": ">=18" } }, "sha512-loo82RyPbMyvJwRhhZVZovut9v2hFBSkqd1vQoNXgMrCRApLwrrttu5Iuodns15gLE3mqI+it5oEhxTtO5DrxA=="],
 

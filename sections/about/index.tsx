@@ -1,5 +1,4 @@
-import { EmailIcon } from "@chakra-ui/icons";
-import { Box, List, SimpleGrid, VStack } from "@chakra-ui/react";
+import { Box, chakra, List, SimpleGrid, VStack } from "@chakra-ui/react";
 import { SectionContainer, SectionHeading } from "@common/index";
 import { aboutMe, randomFacts } from "@configs/about";
 import Image from "next/image";
@@ -28,7 +27,17 @@ export default function AboutContainer() {
           <List.Root gap={3} listStyleType="none">
             <List.Item textStyle="list-heading" display="flex" alignItems="center" gap={2}>
               <List.Indicator color="red.500">
-                <EmailIcon boxSize={5} />
+                <chakra.svg boxSize={5} viewBox="0 0 24 24" fill="currentColor">
+                  <title>Email icon</title>
+                  <path
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    fill="none"
+                  />
+                </chakra.svg>
               </List.Indicator>
               {randomFacts.title}
             </List.Item>
@@ -48,7 +57,17 @@ export default function AboutContainer() {
           <List.Root gap={3} listStyleType="none">
             <List.Item textStyle="list-heading" display="flex" alignItems="center" gap={2}>
               <List.Indicator color="red.500">
-                <EmailIcon boxSize={5} />
+                <chakra.svg boxSize={5} viewBox="0 0 24 24" fill="currentColor">
+                  <title>Email icon</title>
+                  <path
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    fill="none"
+                  />
+                </chakra.svg>
               </List.Indicator>
               {aboutMe.title}
             </List.Item>
