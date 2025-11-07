@@ -32,6 +32,10 @@
     "dev": "next",
     "build": "next build",
     "build-export": "cross-env NEXT_OUTPUT_MODE=export next build",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "pages:deploy": "bun run pages:build && wrangler pages deploy .vercel/output/static",
+    "pages:watch": "npx @cloudflare/next-on-pages --watch",
+    "pages:dev": "npx wrangler pages dev .vercel/output/static --compatibility-flag=nodejs_compat",
     "start": "next start",
     "analyze": "ANALYZE=true next build --webpack",
     "find:unused": "next-unused",
@@ -63,6 +67,7 @@
     "sharp": "^0.34.5"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.5",
     "@types/node": "^24.10.0",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
@@ -71,7 +76,8 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.6",
     "@biomejs/biome": "^2.3.4",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "wrangler": "^3.94.0"
   },
   "next-unused": {
     "alias": {

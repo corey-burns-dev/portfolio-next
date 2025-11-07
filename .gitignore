@@ -12,6 +12,11 @@
 /.next/
 .history
 /out/
+/.vercel
+
+# typescript
+*.tsbuildinfo
+tsconfig.tsbuildinfo
 
 # production
 /build
