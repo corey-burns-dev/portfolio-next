@@ -30,7 +30,7 @@
   ],
   "scripts": {
     "dev": "next",
-    "build": "npx @cloudflare/next-on-pages",
+    "build": "next build",
     "build-export": "cross-env NEXT_OUTPUT_MODE=export next build",
     "pages:build": "npx @cloudflare/next-on-pages",
     "pages:deploy": "bun run pages:build && wrangler pages deploy .vercel/output/static",
